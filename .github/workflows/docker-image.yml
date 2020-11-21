@@ -1,0 +1,18 @@
+name: Create Builder image with Graalvm-ce and native-image
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag cloud-surfers/graalvm-builder:$(date +%s)
