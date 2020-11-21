@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image 20.3
-      run: docker build src/20.3 --file Dockerfile --tag cloud-surfers/graalvm-builder:20.3-$(date +%s)
+      run: docker build --file src/20.3/Dockerfile --tag cloud-surfers/graalvm-builder:20.3-$(date +%s)
     - name: Build the Docker image 20.2
-      run: docker build src/20.2 --file Dockerfile --tag cloud-surfers/graalvm-builder:20.2-$(date +%s)
+      run: docker build --file src/20.2/Dockerfile --tag cloud-surfers/graalvm-builder:20.2-$(date +%s)
